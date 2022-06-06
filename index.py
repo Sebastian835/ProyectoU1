@@ -10,6 +10,10 @@ app = Flask(__name__, template_folder='templates')
 def home():
     return render_template('home.html')
 
+@app.route('/Login')
+def Login():
+    return render_template('Login.html')
+
 
 # Ejecutar la aplicacion
 if __name__ == '__main__':
