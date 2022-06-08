@@ -10,38 +10,60 @@
 </head>
 
 <body style="background-color:aquamarine">
-    <br>
-    <div id="login" action="/Login" method="post">
-        <div class="container">
-            <div id="login-row" class="row justify-content-center align-items-center">
-                <div id="login-column" class="col-md-6">
-                    <div id="login-box" class="col-md-12">
-                        <form id="login-form" class="form" action="" method="post">
-                            <h3 class="text-center" style="color: black;">Inicio Sesion</h3>
-                            <div class="form-group">
-                                <label for="username" style="color: black;">Correo:</label><br>
-                                <input type="email" name="email" id="email" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="password">Contraseña:</label><br>
-                                <input type="password" name="password" id="password" class="form-control">
-                            </div>
-                            <br>
-                            <center>
-                                <div class="form-group">
-                                    <input type="submit" style="color: WHITE;" name="Login" class="btn btn-info btn-md" value="Entrar">
+
+    <section class="vh-100">
+        <div class="container-fluid h-custom">
+            <br><br><br><br><br><br>
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-md-9 col-lg-6 col-xl-5">
+                    <img class="img-fluid rounded mb-4 mb-lg-0" src="{{url_for('static', filename='img/travelB.jpg')}}" class="img-fluid" alt="Sample image" />
+                </div>
+                <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+
+                    <div id="login" action="/Login" method="post">
+                        <div class="container">
+                            <div id="login-row" class="row justify-content-center align-items-center">
+                                <div id="login-column" class="col-md-6">
+                                    <div id="login-box" class="col-md-12">
+                                        <form id="login-form" class="form" action="" method="post">
+                                            <h3 class="text-center" style="color: black;">Inicio Sesion</h3>
+                                            <div class="form-group">
+                                                <label for="username" style="color: black;">Correo:</label><br>
+                                                <input type="email" name="email" id="email" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="password" style="color: black;">Contraseña:</label><br>
+                                                <input type="password" name="password" id="password" class="form-control">
+                                            </div>
+                                            <br>
+                                            <center>
+                                                <div class="form-group">
+                                                    <input type="submit" style="color: black;" name="Login" class="btn btn-info btn-md" value="Entrar">
+                                                </div>
+                                            </center>
+                                            <br>
+                                            <div id="register-link" class="text-center">
+                                                <a href="../Registro" style="color: black;" class="btn btn-info btn-md">REGISTRARSE</a>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
-                            </center>
-                            <br>
-                            <div id="register-link" class="text-center">
-                                <a href="../Registro" style="color: black;">REGISTRARSE</a>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <br><br>
+    <!-- Footer-->
+    <footer class="py-4 bg-dark">
+        <div class="container px-4 px-lg-5">
+            <p class="m-0 text-center text-white">Mega Travel Todos los derechos reservados. Certificado de Registro de Turismo N° PU1001-00001320. LUAE N° 2020WEBLUAE157216</p>
+        </div>
+    </footer>
+
 </body>
 
 </html>

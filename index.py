@@ -1,4 +1,3 @@
-from csv import excel_tab
 from flask import Flask, render_template, request, redirect, url_for
 
 
@@ -57,8 +56,12 @@ def Registro():
 
 @app.route('/Vuelos')
 def Vuelos():
-    
     return render_template('Vuelos.html')
+
+
+@app.route('/PreguntasFrecuentes')
+def Preguntitas():
+    return render_template('PreguntasF.html')
 
 
 # Ejecutar la aplicacion

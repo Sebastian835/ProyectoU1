@@ -15,13 +15,13 @@
     <!-- Responsive navbar-->
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #047cfc;">
         <div class="container px-5">
-            <a class="navbar-brand" href="../templates/home.html">Mega Travel</a>
+            <a class="navbar-brand" href="/">Mega Travel</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="../Login">Login</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!">Ofertas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!">Preguntas Frecuentes</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="/Login">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Login">Ofertas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/PreguntasFrecuentes">Preguntas Frecuentes</a></li>
                     <li class="nav-item"><a class="nav-link" href="#!">Contactanos</a></li>
                 </ul>
             </div>
@@ -32,8 +32,10 @@
     <div class="container px-4 px-lg-5">
         <!-- Heading Row-->
         <div class="row gx-4 gx-lg-5 align-items-center my-5">
+
             <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="{{url_for('static', filename='img/travelB.jpg')}}" alt="..." />
             </div>
+
             <div class="col-lg-5">
                 <center>
                     <h1 class="font-weight-light">MEGA TRAVEL</h1>
@@ -48,6 +50,7 @@
                 <center><a class="btn btn-primary" href="../Login">Inicia Sesion</a></center>
             </div>
         </div>
+
         <!-- Call to Action-->
         <div class="card text-white bg-secondary my-4 py-2 text-center">
             <div class="card-body">
