@@ -64,6 +64,28 @@ def Preguntitas():
     return render_template('PreguntasF.html')
 
 
+MensajeContactanos = []
+@app.route('/Contactanos', methods=['GET','POST'])
+def Contactanos():
+    if(request.method == "POST"):
+        nombre = request.form['nombre']           
+        correo = request.form['email']         
+        telfono = request.form['phone']
+        mensaje = request.form['message']
+        if(nombre == "" or correo  == "" or telfono == "" or mensaje == ""):             #Si no hay datos no redirecciona
+            return redirect(url_for('Contactanos'))
+        else:
+            MensajeContactanos.append(nombre)
+            MensajeContactanos.append(correo)
+            MensajeContactanos.append(telfono)
+            MensajeContactanos.append(mensaje)
+            print(MensajeContactanos)
+            return redirect(url_for('Contactanos'))
+
+    return render_template('Contactanos.html')
+
+
+
 # Ejecutar la aplicacion
 if __name__ == '__main__':
     app.run(debug=True)
