@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
 
     <title>Preguntas Frecuentes</title>
 </head>
@@ -14,13 +15,13 @@
     <!-- Responsive navbar-->
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #047cfc;">
         <div class="container px-5">
-            <a class="navbar-brand" href="/">Mega Travel</a>
+            <a class="navbar-brand" href="/"><img src="{{url_for('static', filename='img/logo.png')}}" width="80px" height="50px">Mega Travel</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link active" href="/Login">Login</a></li>
+                    <li class="nav-item"><a class="nav-link " href="/Login">Login</a></li>
                     <li class="nav-item"><a class="nav-link" href="/Login">Ofertas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!">Preguntas Frecuentes</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#!">Preguntas Frecuentes</a></li>
                     <li class="nav-item"><a class="nav-link" href="#!">Contactanos</a></li>
                     <li class="nav-item"><a class="nav-link " href="/">Salir</a></li>
                 </ul>
@@ -30,75 +31,55 @@
 
     <br><br>
 
-    <div class="card-group">
-        <div class="card">
-            <div class="card-body">
-                <center>
-                    <h5 class="card-title">Documentación necesaria para comprar y viajar</h5><br>
-                    <p class="card-text">Para comprar tu viaje en Mega Viajes deberás tener el número de documento de identidad, el nombre, el apellido y tu fecha de nacimiento. Antes de viajar, revisa el detalle de tu reserva para conocer las visas y vacunas exigidas en
-                        el país de destino. Esto incluye las escalas, conexiones, tours y paradas que hagas durante tu viaje.
-                    </p>
-                </center>
+    <div class="container">
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+                <p class="h5" style="color: rgb(28, 57, 75);">Documentación necesaria para comprar y viajar</p>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne">
+                    <div class="accordion-body">
+                        <p class="h6">Para comprar tu viaje en Mega Viajes deberás tener el número de documento de identidad, el nombre, el apellido y tu fecha de nacimiento. Antes de viajar, revisa el detalle de tu reserva para conocer las visas y vacunas exigidas
+                            en el país de destino. Esto incluye las escalas, conexiones, tours y paradas que hagas durante tu viaje.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="accordion-item">
+                <p class="h5" style="color: rgb(28, 57, 75);">¿Por qué elegir Mega Viajes para tu viaje?</p>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne">
+                    <div class="accordion-body">
+                        <p class="h6">Mega Viajes es una de las agencias de viaje con más trayectoria de Latinoamérica, reconocida y recomendada por miles de viajeros de todo el continente. Aprovecha nuestras ofertas y promociones de viaje y recorre el mundo entero.
+                            Compra tus pasajes y todo para tu viaje en Mega Viajes desde la web. ¿Tienes dudas o necesitas ayuda con tu reserva? Puedes llamarnos en todo momento al centro de Mega Viajes atención al cliente y viaja con la confianza de
+                            saber que estamos contigo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="accordion-item">
+                <p class="h5" style="color: rgb(28, 57, 75);">¿Cómo comprar en Mega Viajes?</p>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne">
+                    <div class="accordion-body">
+                        <p class="h6">En Mega Viajes puedes comprar todo para tus vacaciones muy fácilmente. Primero, ingresa la información de tu viaje en el buscador. Compara entre cientos de opciones y elige la que más te guste desde el botón Comprar. Carga los
+                            datos de los pasajeros, selecciona tu medio de pago y completa la información requerida. ¡Aprovecha las promociones bancarias de Despegar! Por último, toca nuevamente en Comprar y ¡listo! Recibirás tus vouchers por mail para
+                            que empieces a disfrutar tu viaje.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="accordion-item">
+                <p class="h5" style="color: rgb(28, 57, 75);">¿Se puede modificar o cancelar una compra?</p>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne">
+                    <div class="accordion-body">
+                        <p class="h6">En Mega Viajes puedes gestionar el cambio o la cancelación de una reserva, aunque ten en cuenta que algunos proveedores o tarifas no lo permiten o cobran un costo adicional por hacerlo. En vuelos, hoteles y autos, solo podrás hacer
+                            cambios con el mismo proveedor. También puedes cancelar una reserva para todos o algunos de los pasajeros.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="card">
-            <div class="card-body">
-                <center>
-                    <h5 class="card-title">¿Por qué elegir Mega Viajes para tu viaje?</h5><br>
-                    <p class="card-text">Mega Viajes es una de las agencias de viaje con más trayectoria de Latinoamérica, reconocida y recomendada por miles de viajeros de todo el continente. Aprovecha nuestras ofertas y promociones de viaje y recorre el mundo entero. Compra
-                        tus pasajes y todo para tu viaje en Mega Viajes desde la web. ¿Tienes dudas o necesitas ayuda con tu reserva? Puedes llamarnos en todo momento al centro de Mega Viajes atención al cliente y viaja con la confianza de saber que estamos
-                        contigo.
-                    </p>
-                </center>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-body">
-                <center>
-                    <h5 class="card-title">¿Cómo comprar en Mega Viajes?</h5>
-                    <p class="card-text">En Mega Viajes puedes comprar todo para tus vacaciones muy fácilmente. Primero, ingresa la información de tu viaje en el buscador. Compara entre cientos de opciones y elige la que más te guste desde el botón Comprar. Carga los datos
-                        de los pasajeros, selecciona tu medio de pago y completa la información requerida. ¡Aprovecha las promociones bancarias de Despegar! Por último, toca nuevamente en Comprar y ¡listo! Recibirás tus vouchers por mail para que empieces
-                        a disfrutar tu viaje.</p>
-                </center>
-            </div>
-        </div>
-    </div>
 
-
-    <br><br>
-
-    <div class="card-group">
-        <div class="card">
-            <div class="card-body">
-                <center>
-                    <h5 class="card-title">Documentación necesaria para comprar y viajar</h5><br>
-                    <p class="card-text">Para comprar tu viaje en Mega Viajes deberás tener el número de documento de identidad, el nombre, el apellido y tu fecha de nacimiento. Antes de viajar, revisa el detalle de tu reserva para conocer las visas y vacunas exigidas en
-                        el país de destino. Esto incluye las escalas, conexiones, tours y paradas que hagas durante tu viaje.
-                    </p>
-                </center>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-body">
-                <center>
-                    <h5 class="card-title">¿Por qué elegir Mega Viajes para tu viaje?</h5><br>
-                    <p class="card-text">Mega Viajes es una de las agencias de viaje con más trayectoria de Latinoamérica, reconocida y recomendada por miles de viajeros de todo el continente. Aprovecha nuestras ofertas y promociones de viaje y recorre el mundo entero. Compra
-                        tus pasajes y todo para tu viaje en Mega Viajes desde la web. ¿Tienes dudas o necesitas ayuda con tu reserva? Puedes llamarnos en todo momento al centro de Mega Viajes atención al cliente y viaja con la confianza de saber que estamos
-                        contigo.
-                    </p>
-                </center>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-body">
-                <center>
-                    <h5 class="card-title">¿Cómo comprar en Mega Viajes?</h5>
-                    <p class="card-text">En Mega Viajes puedes comprar todo para tus vacaciones muy fácilmente. Primero, ingresa la información de tu viaje en el buscador. Compara entre cientos de opciones y elige la que más te guste desde el botón Comprar. Carga los datos
-                        de los pasajeros, selecciona tu medio de pago y completa la información requerida. ¡Aprovecha las promociones bancarias de Despegar! Por último, toca nuevamente en Comprar y ¡listo! Recibirás tus vouchers por mail para que empieces
-                        a disfrutar tu viaje.</p>
-                </center>
-            </div>
-        </div>
     </div>
     <br><br>
     <!-- Footer-->
@@ -110,4 +91,7 @@
 
 </body>
 
+
 </html>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
