@@ -84,6 +84,21 @@ def Contactanos():
     return render_template('Contactanos.html')
 
 
+@app.route('/Argentina')
+def Argentina():
+    return render_template('Argentina.html')
+
+
+@app.route('/España')
+def España():
+    return render_template('España.html')
+
+
+@app.route('/Egipto')
+def Egipto():
+    return render_template('Egipto.html')
+
+
 
 # Ejecutar la aplicacion
 if __name__ == '__main__':
