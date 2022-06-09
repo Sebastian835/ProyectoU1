@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/estilos.css') }}">
+
 
     <title>Vuelos</title>
 </head>
@@ -61,6 +63,8 @@
         </div>
     </div>
 
+
+
     <!--Tarjetas-->
     <!--Clase contener-->
     <div class="container">
@@ -85,12 +89,14 @@
                 <!--Clase de la tarjeta modificada en el centrado del texto y el background de la tarjeta-->
                 <div class="card text-center text-bg-dark mb-3" style="width: 18rem"> <img src="https://d2v9ipibika81v.cloudfront.net/uploads/sites/26/BSAs-Southern-Cone-Trade-Mission-1140x684.png" height="200px" class="card-img-top" alt="..." />
                     <div class="card-body">
-                        <a href="#/" class="btn btn-light">Argentina</a>
+                        <a href="#/" class="btn btn-light" id="argentinaBoton">Argentina</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <br><br>
+
 
 
 
@@ -103,5 +109,6 @@
     </footer>
 
 </body>
+<script type="text/javascript" src="{{ url_for('static', filename='js/funciones.js') }}"></script>
 
 </html>
