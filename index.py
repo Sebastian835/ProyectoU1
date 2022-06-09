@@ -152,6 +152,77 @@ def Egipto():
             return redirect(url_for('Pago'))
     return render_template('Egipto.html')
 
+
+# Ruta para Turquia
+VuelosTurquia=[]
+@app.route('/Turquia' , methods=['GET','POST'])
+def Turquia():
+    if(request.method == "POST"):
+        nombre = request.form['nombre']           
+        correo = request.form['email']         
+        telfono = request.form['phone']
+        fecha = request.form['fecha']
+        hora = request.form['hora']
+        if(nombre == "" or correo  == "" or telfono == "" or fecha == ""  or hora == ""):             #Si no hay datos no redirecciona
+            return redirect(url_for('Turquia'))
+        else:
+            VuelosTurquia.append(nombre)
+            VuelosTurquia.append(correo)
+            VuelosTurquia.append(telfono)
+            VuelosTurquia.append(fecha)
+            VuelosTurquia.append(hora)
+            print(VuelosTurquia)
+            return redirect(url_for('Pago'))
+    return render_template('Turquia.html')
+
+
+# Ruta para Francia
+VuelosFrancia=[]
+@app.route('/Francia', methods=['GET','POST'])
+def Francia():
+    if(request.method == "POST"):
+        nombre = request.form['nombre']           
+        correo = request.form['email']         
+        telfono = request.form['phone']
+        fecha = request.form['fecha']
+        hora = request.form['hora']
+        if(nombre == "" or correo  == "" or telfono == "" or fecha == ""  or hora == ""):             #Si no hay datos no redirecciona
+            return redirect(url_for('Francia'))
+        else:
+            VuelosFrancia.append(nombre)
+            VuelosFrancia.append(correo)
+            VuelosFrancia.append(telfono)
+            VuelosFrancia.append(fecha)
+            VuelosFrancia.append(hora)
+            print(VuelosFrancia)
+            return redirect(url_for('Pago'))
+    return render_template('Francia.html')
+
+
+# Ruta para Mexico
+VuelosMexico=[]
+@app.route('/Mexico', methods=['GET','POST'])
+def Mexico():
+    if(request.method == "POST"):
+        nombre = request.form['nombre']           
+        correo = request.form['email']         
+        telfono = request.form['phone']
+        fecha = request.form['fecha']
+        hora = request.form['hora']
+        if(nombre == "" or correo  == "" or telfono == "" or fecha == ""  or hora == ""):             #Si no hay datos no redirecciona
+            return redirect(url_for('Mexico'))
+        else:
+            VuelosMexico.append(nombre)
+            VuelosMexico.append(correo)
+            VuelosMexico.append(telfono)
+            VuelosMexico.append(fecha)
+            VuelosMexico.append(hora)
+            print(VuelosMexico)
+            return redirect(url_for('Pago'))
+    return render_template('Mexico.html')
+
+
+
 # Ruta para Pago
 @app.route('/Pago')
 def Pago():

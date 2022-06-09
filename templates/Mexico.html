@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
-    <title>Argentina</title>
+    <title>Mexico</title>
 </head>
 
 <body>
@@ -38,13 +38,13 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="{{url_for('static', filename='img/argentina1.jpg')}}" class="d-block w-100" alt="..." width="250px" height="510px">
+                    <img src="{{url_for('static', filename='img/egipto1.jpg')}}" class="d-block w-100" alt="..." width="250px" height="510px">
                 </div>
                 <div class="carousel-item">
-                    <img src="{{url_for('static', filename='img/argentina2.jpg')}}" class="d-block w-100" alt="..." width="250px" height="510px">
+                    <img src="{{url_for('static', filename='img/egipto2.jpg')}}" class="d-block w-100" alt="..." width="250px" height="510px">
                 </div>
                 <div class="carousel-item">
-                    <img src="{{url_for('static', filename='img/argentina3.png')}}" class="d-block w-100" alt="..." width="250px" height="510px">
+                    <img src="{{url_for('static', filename='img/egipto3.jpg')}}" class="d-block w-100" alt="..." width="250px" height="510px">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -73,7 +73,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="well well-sm">
-                                <form class="form-horizontal" action="/Argentina" method="post">
+                                <form class="form-horizontal" action="/Mexico" method="post">
                                     <fieldset>
                                         <legend class="text-center header"><strong>Resevar Vuelo</strong></legend>
                                         <p><strong>Ingrese para verificar con la cuenta</strong></p>
@@ -103,9 +103,9 @@
 
                                             <select name="fecha" id="fecha" class="btn btn-success">
                                                 <option value=""></option>
-                                                <option value="01 Junio">01 Junio</option>
-                                                <option value="01 Julio">01 Julio</option>
-                                                <option value="01 Agosto">01 Agosto</option>
+                                                <option value="28 Junio">28 Junio</option>
+                                                <option value="02 Julio">02 Julio</option>
+                                                <option value="16 Agosto">16 Agosto</option>
                                             </select>
 
                                             <br><br>
@@ -113,9 +113,9 @@
 
                                             <select name="hora" id="hora" class="btn btn-success">
                                                 <option value=""></option>
-                                                <option value="3 am">3 AM</option>
-                                                <option value="9 am">9 AM</option>
-                                                <option value="7 pm">7 PM</option>
+                                                <option value="7 am">7 AM</option>
+                                                <option value="10 am">10 AM</option>
+                                                <option value="6 pm">6 PM</option>
                                             </select>
                                         </center>
                                         <br>
@@ -133,6 +133,8 @@
             </div>
         </div>
     </div>
+
+    <br><br>
 
     <!-- Footer-->
     <footer class="py-4 bg-dark">
