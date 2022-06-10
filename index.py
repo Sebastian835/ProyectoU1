@@ -198,8 +198,9 @@ def Mexico():
     return render_template('Mexico.html')
 
 
-pago=[]
+
 # Ruta para Pago
+pago=[]                         #guarda los datos de la tarjeta del pago
 @app.route('/Pago', methods=['GET','POST'])
 def Pago():
     if(request.method == "POST"):
@@ -219,11 +220,10 @@ def Pago():
 
 # Ruta para Pago
 @app.route('/VuelosRealizados')
-def VuelosRealizados():
+def VuelosRealizados():                                         #Envia cada uno de los arreglos donde se encuentran los vuelos realizados
     return render_template('VuelosRealizados.html', VuelosRealizadosM = VuelosMexico, VuelosRealizadosF = VuelosFrancia
         , VuelosRealizadosT = VuelosTurquia, VuelosRealizadosEs = VuelosESPAÑA, VuelosRealizadosEg = VuelosEGIPTO
         , VuelosRealizadosA = VuelosARGENTINA)
-
 
 
 # Ejecutar la aplicacion

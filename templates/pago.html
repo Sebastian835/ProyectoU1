@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap-->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
     <title>Pago Vuelo</title>
 </head>
 
 <body>
-
     <center>
         <div class="col-lg-6 order-2 order-lg-1 p-5">
             <!--<form class="credit-card-div">-->
@@ -20,6 +21,7 @@
                     <div class="row ">
                         <div class="col-md-12">
                             <input type="text" name="numeroTarjeta" id="numeroTarjeta" class="form-control" placeholder="Numero de Tarjeta" />
+                            <!--Numero de tarjeta-->
                         </div>
                     </div>
                     <br>
@@ -27,30 +29,36 @@
                         <div class="col-md-3 col-sm-3 col-xs-3">
                             <span class="help-block text-muted small-font"> Mes</span>
                             <input type="text" name="mesVence" id="mesVence" class="form-control" placeholder="MM" />
+                            <!--Mes de vencimiento de la tarjeta-->
                         </div>
 
                         <div class="col-md-3 col-sm-3 col-xs-3">
                             <span class="help-block text-muted small-font"> Año</span>
                             <input type="text" name="añoVence" id="añoVence" class="form-control" placeholder="YY" />
+                            <!--Año de vencimiento de la tarjeta-->
                         </div>
 
                         <div class="col-md-3 col-sm-3 col-xs-3">
                             <span class="help-block text-muted small-font"> CCV</span>
                             <input type="text" name="ccv" id="ccv" class="form-control" placeholder="CCV" />
+                            <!--CVV de la tarjeta-->
                         </div>
                     </div>
                     <br>
                     <div class="row ">
                         <div class="col-md-12 pad-adjust">
                             <input type="text" name="dueñoTarjeta" id="dueñoTarjeta" class="form-control" placeholder="Nombre del Propetario" />
+                            <!--Nombre del propetario de la tarjeta-->
                         </div>
                     </div><br>
                     <div class="row ">
                         <div class="col-md-6 col-sm-6 col-xs-6 pad-adjust">
                             <a href="../Vuelos" style="color: black;" class="btn btn-info btn-md">Cancelar</a>
+                            <!--Redirecion a la pagina Vuelos-->
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-6 pad-adjust">
                             <a href="../VuelosRealizados" style="color: black;" class="btn btn-info btn-md">Pagar</a>
+                            <!--Redirecion a la pagina Vuelos Realizados-->
                         </div>
                     </div>
                 </div>
