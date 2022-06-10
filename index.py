@@ -97,11 +97,7 @@ def Argentina():
         if(nombre == "" or correo  == "" or telfono == "" or fecha == ""  or hora == ""):             #Si no hay datos no redirecciona
             return redirect(url_for('Argentina'))
         else:
-            VuelosARGENTINA.append(nombre)
-            VuelosARGENTINA.append(correo)
-            VuelosARGENTINA.append(telfono)
-            VuelosARGENTINA.append(fecha)
-            VuelosARGENTINA.append(hora)
+            VuelosARGENTINA.append({'nombre': nombre, 'telefono': telfono, 'fecha': fecha, 'hora': hora} )
             print(VuelosARGENTINA)
             return redirect(url_for('Pago'))
     return render_template('Argentina.html')
@@ -120,11 +116,7 @@ def España():
         if(nombre == "" or correo  == "" or telfono == "" or fecha == ""  or hora == ""):             #Si no hay datos no redirecciona
             return redirect(url_for('España'))
         else:
-            VuelosESPAÑA.append(nombre)
-            VuelosESPAÑA.append(correo)
-            VuelosESPAÑA.append(telfono)
-            VuelosESPAÑA.append(fecha)
-            VuelosESPAÑA.append(hora)
+            VuelosESPAÑA.append({'nombre': nombre, 'telefono': telfono, 'fecha': fecha, 'hora': hora} )
             print(VuelosESPAÑA)
             return redirect(url_for('Pago'))
     return render_template('España.html')
@@ -143,11 +135,7 @@ def Egipto():
         if(nombre == "" or correo  == "" or telfono == "" or fecha == ""  or hora == ""):             #Si no hay datos no redirecciona
             return redirect(url_for('Egipto'))
         else:
-            VuelosEGIPTO.append(nombre)
-            VuelosEGIPTO.append(correo)
-            VuelosEGIPTO.append(telfono)
-            VuelosEGIPTO.append(fecha)
-            VuelosEGIPTO.append(hora)
+            VuelosEGIPTO.append({'nombre': nombre, 'telefono': telfono, 'fecha': fecha, 'hora': hora} )
             print(VuelosEGIPTO)
             return redirect(url_for('Pago'))
     return render_template('Egipto.html')
@@ -166,11 +154,7 @@ def Turquia():
         if(nombre == "" or correo  == "" or telfono == "" or fecha == ""  or hora == ""):             #Si no hay datos no redirecciona
             return redirect(url_for('Turquia'))
         else:
-            VuelosTurquia.append(nombre)
-            VuelosTurquia.append(correo)
-            VuelosTurquia.append(telfono)
-            VuelosTurquia.append(fecha)
-            VuelosTurquia.append(hora)
+            VuelosTurquia.append({'nombre': nombre, 'telefono': telfono, 'fecha': fecha, 'hora': hora} )
             print(VuelosTurquia)
             return redirect(url_for('Pago'))
     return render_template('Turquia.html')
@@ -189,11 +173,7 @@ def Francia():
         if(nombre == "" or correo  == "" or telfono == "" or fecha == ""  or hora == ""):             #Si no hay datos no redirecciona
             return redirect(url_for('Francia'))
         else:
-            VuelosFrancia.append(nombre)
-            VuelosFrancia.append(correo)
-            VuelosFrancia.append(telfono)
-            VuelosFrancia.append(fecha)
-            VuelosFrancia.append(hora)
+            VuelosFrancia.append({'nombre': nombre, 'telefono': telfono, 'fecha': fecha, 'hora': hora} )
             print(VuelosFrancia)
             return redirect(url_for('Pago'))
     return render_template('Francia.html')
@@ -212,11 +192,7 @@ def Mexico():
         if(nombre == "" or correo  == "" or telfono == "" or fecha == ""  or hora == ""):             #Si no hay datos no redirecciona
             return redirect(url_for('Mexico'))
         else:
-            VuelosMexico.append(nombre)
-            VuelosMexico.append(correo)
-            VuelosMexico.append(telfono)
-            VuelosMexico.append(fecha)
-            VuelosMexico.append(hora)
+            VuelosMexico.append({'nombre': nombre, 'telefono': telfono, 'fecha': fecha, 'hora': hora} )
             print(VuelosMexico)
             return redirect(url_for('Pago'))
     return render_template('Mexico.html')
@@ -227,6 +203,14 @@ def Mexico():
 @app.route('/Pago')
 def Pago():
     return render_template('pago.html')
+
+# Ruta para Pago
+@app.route('/VuelosRealizados')
+def VuelosRealizados():
+    return render_template('VuelosRealizados.html', VuelosRealizadosM = VuelosMexico, VuelosRealizadosF = VuelosFrancia
+        , VuelosRealizadosT = VuelosTurquia, VuelosRealizadosEs = VuelosESPAÑA, VuelosRealizadosEg = VuelosEGIPTO
+        , VuelosRealizadosA = VuelosARGENTINA)
+
 
 
 # Ejecutar la aplicacion
