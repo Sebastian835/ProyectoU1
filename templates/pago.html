@@ -11,56 +11,53 @@
 </head>
 
 <body>
-    <div class="container">
-        <center>
-            <div class="col-lg-6 order-2 order-lg-1 p-5">
-                <form action="#" class="credit-card-div">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <div class="row ">
-                                <div class="col-md-12">
-                                    <input type="text" class="form-control" placeholder="Numero de Tarjeta" />
-                                </div>
-                            </div>
-                            <br>
-                            <div class="row ">
-                                <div class="col-md-3 col-sm-3 col-xs-3">
-                                    <span class="help-block text-muted small-font"> Mes</span>
-                                    <input type="text" class="form-control" placeholder="MM" />
-                                </div>
 
-                                <div class="col-md-3 col-sm-3 col-xs-3">
-                                    <span class="help-block text-muted small-font"> Año</span>
-                                    <input type="text" class="form-control" placeholder="YY" />
-                                </div>
-
-                                <div class="col-md-3 col-sm-3 col-xs-3">
-                                    <span class="help-block text-muted small-font"> CCV</span>
-                                    <input type="text" class="form-control" placeholder="CCV" />
-                                </div>
-                            </div>
-                            <br>
-                            <div class="row ">
-                                <div class="col-md-12 pad-adjust">
-
-                                    <input type="text" class="form-control" placeholder="Nombre del Propetario" />
-                                </div>
-                            </div><br>
-                            <div class="row ">
-                                <div class="col-md-6 col-sm-6 col-xs-6 pad-adjust">
-                                    <a href="../Vuelos" style="color: black;" class="btn btn-info btn-md">Cancelar</a>
-                                </div>
-                                <div class="col-md-6 col-sm-6 col-xs-6 pad-adjust">
-                                    <a href="../VuelosRealizados" style="color: black;" class="btn btn-info btn-md">Pagar</a>
-                                </div>
-                            </div>
-
+    <center>
+        <div class="col-lg-6 order-2 order-lg-1 p-5">
+            <!--<form class="credit-card-div">-->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="row ">
+                        <div class="col-md-12">
+                            <input type="text" name="numeroTarjeta" id="numeroTarjeta" class="form-control" placeholder="Numero de Tarjeta" />
                         </div>
                     </div>
-                </form>
+                    <br>
+                    <div class="row ">
+                        <div class="col-md-3 col-sm-3 col-xs-3">
+                            <span class="help-block text-muted small-font"> Mes</span>
+                            <input type="text" name="mesVence" id="mesVence" class="form-control" placeholder="MM" />
+                        </div>
+
+                        <div class="col-md-3 col-sm-3 col-xs-3">
+                            <span class="help-block text-muted small-font"> Año</span>
+                            <input type="text" name="añoVence" id="añoVence" class="form-control" placeholder="YY" />
+                        </div>
+
+                        <div class="col-md-3 col-sm-3 col-xs-3">
+                            <span class="help-block text-muted small-font"> CCV</span>
+                            <input type="text" name="ccv" id="ccv" class="form-control" placeholder="CCV" />
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-md-12 pad-adjust">
+                            <input type="text" name="dueñoTarjeta" id="dueñoTarjeta" class="form-control" placeholder="Nombre del Propetario" />
+                        </div>
+                    </div><br>
+                    <div class="row ">
+                        <div class="col-md-6 col-sm-6 col-xs-6 pad-adjust">
+                            <a href="../Vuelos" style="color: black;" class="btn btn-info btn-md">Cancelar</a>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6 pad-adjust">
+                            <a href="../VuelosRealizados" style="color: black;" class="btn btn-info btn-md">Pagar</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </center>
-    </div>
+            <!-- </form>-->
+        </div>
+    </center>
 </body>
 
 </html>

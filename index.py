@@ -3,8 +3,8 @@ from flask import Flask, render_template, request, redirect, url_for
 # Inicializar la aplicacion
 app = Flask(__name__, template_folder='templates')
 
-usuarios_Registro = []
-pagoVuelos=[]
+usuarios_Registro = []                          #Array para los usuarios que se registren
+pagoVuelos=[]                           #Array para los vuelos que hace el usuario
 
 # Ruta principal 
 @app.route('/')
@@ -64,7 +64,7 @@ def Preguntitas():
     return render_template('PreguntasF.html')
 
 # Ruta para contactanos
-MensajeContactanos = []
+MensajeContactanos = []                                             #Mensaje del usuario a la pagina
 @app.route('/Contactanos', methods=['GET','POST'])
 def Contactanos():
     if(request.method == "POST"):
@@ -85,7 +85,7 @@ def Contactanos():
     return render_template('Contactanos.html')
 
 # Ruta para Argentina
-VuelosARGENTINA=[]
+VuelosARGENTINA=[]                                          #Guarda los vuelos realizados a argentina
 @app.route('/Argentina', methods=['GET','POST'])
 def Argentina():
     if(request.method == "POST"):
@@ -104,7 +104,7 @@ def Argentina():
 
 
 # Ruta para España
-VuelosESPAÑA=[]
+VuelosESPAÑA=[]                                          #Guarda los vuelos realizados a españa
 @app.route('/España', methods=['GET','POST'])
 def España():
     if(request.method == "POST"):
@@ -123,7 +123,7 @@ def España():
 
 
 # Ruta para Egipto
-VuelosEGIPTO=[]
+VuelosEGIPTO=[]                                          #Guarda los vuelos realizados a egipto
 @app.route('/Egipto', methods=['GET','POST'])
 def Egipto():
     if(request.method == "POST"):
@@ -142,7 +142,7 @@ def Egipto():
 
 
 # Ruta para Turquia
-VuelosTurquia=[]
+VuelosTurquia=[]                                          #Guarda los vuelos realizados a turqia
 @app.route('/Turquia' , methods=['GET','POST'])
 def Turquia():
     if(request.method == "POST"):
@@ -161,7 +161,7 @@ def Turquia():
 
 
 # Ruta para Francia
-VuelosFrancia=[]
+VuelosFrancia=[]                                          #Guarda los vuelos realizados a francia
 @app.route('/Francia', methods=['GET','POST'])
 def Francia():
     if(request.method == "POST"):
@@ -180,7 +180,7 @@ def Francia():
 
 
 # Ruta para Mexico
-VuelosMexico=[]
+VuelosMexico=[]                                          #Guarda los vuelos realizados a mexico
 @app.route('/Mexico', methods=['GET','POST'])
 def Mexico():
     if(request.method == "POST"):
@@ -198,10 +198,23 @@ def Mexico():
     return render_template('Mexico.html')
 
 
-
+pago=[]
 # Ruta para Pago
-@app.route('/Pago')
+@app.route('/Pago', methods=['GET','POST'])
 def Pago():
+    if(request.method == "POST"):
+        numeroTarjeta = request.form['numeroTarjeta']           
+        mesVencimiento = request.form['mesVence']         
+        yearVencimiento = request.form['añoVence']
+        ccv = request.form['ccv']
+        dueñoTarjeta = request.form['dueñoTarjeta']
+        if(numeroTarjeta == "" or mesVencimiento  == "" or yearVencimiento == "" or ccv == ""  or dueñoTarjeta == ""):             #Si no hay datos no redirecciona
+            return redirect(url_for('Vuelos'))
+        else:
+            pago.append({'NumeroTarjeta': numeroTarjeta, 'ccv': ccv, 'DueñoTarjeta': dueñoTarjeta} )
+            print(pago)
+            return redirect(url_for('VuelosRealizados'))
+
     return render_template('pago.html')
 
 # Ruta para Pago
