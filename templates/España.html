@@ -14,20 +14,32 @@
     <!-- Responsive navbar, CON LAS DIFERENTES SUBPAGINAS PARA QUE REDIRECCIONE-->
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #047cfc;">
         <div class="container px-5">
-            <a class="navbar-brand" href="/"><img src="{{url_for('static', filename='img/logo.png')}}" width="80px" height="50px">Mega Travel</a>
+            <h3>
+                <a class="navbar-brand" href="/"><img src="{{url_for('static', filename='img/logo.png')}}" width="80px" height="50px">Mega Travel</a>
+            </h3>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Responsive navbar-->
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link active" href="../Vuelos">Vuelos</a></li>
-                    <li class="nav-item"><a class="nav-link " href="../VuelosRealizados">Vuelos Realizados</a></li>
+                    <h5>
+                        <li class="nav-item"><a class="nav-link active" href="../Vuelos">Vuelos</a></li>
+                    </h5>
+                    <h5>
+                        <li class="nav-item"><a class="nav-link " href="../VuelosRealizados">Vuelos Realizados</a></li>
+                    </h5>
                     <!-- Redireccion a vuelos realizados-->
-                    <li class="nav-item"><a class="nav-link " href="/PreguntasFrecuentes">Preguntas Frecuentes</a></li>
-                    <!-- Redireccion a preguntas frecuentes-->
-                    <li class="nav-item"><a class="nav-link" href="/Contactanos">Contactanos</a></li>
+                    <h5>
+                        <li class="nav-item"><a class="nav-link " href="/PreguntasFrecuentes">Preguntas Frecuentes</a></li>
+                    </h5>
+                    <h5>
+                        <!-- Redireccion a preguntas frecuentes-->
+                        <li class="nav-item"><a class="nav-link" href="/Contactanos">Contactanos</a></li>
+                    </h5>
                     <!-- Redireccion contactos-->
-                    <li class="nav-item"><a class="nav-link " href="/">Salir</a></li>
-                    <!-- Redireccion a la pagina principal-->
+                    <h5>
+                        <li class="nav-item"><a class="nav-link " href="/">Salir</a></li>
+                        <!-- Redireccion a la pagina principal-->
+                    </h5>
                 </ul>
             </div>
         </div>
