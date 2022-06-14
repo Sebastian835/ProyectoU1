@@ -39,7 +39,7 @@ def Login():
 @app.route('/Registro' , methods=['GET','POST'])
 def Registro():
      #Obtiene los datos del pagina Login por medio del metodo POST
-    if(request.method == "POST"):
+    if(request.method == "POST"):                               #valida que haya enviado datos por el metodo POST
         nombre = request.form['name']           #Registro datos usuario
         correo = request.form['email']         
         contrase = request.form['password']
@@ -49,7 +49,7 @@ def Registro():
             #Ingresa datos en el array del Usuario
             usuarios_Registro.append(nombre)
             usuarios_Registro.append(correo)
-            usuarios_Registro.append(contrase)
+            usuarios_Registro.append(contrase)             
             return redirect(url_for('Login'))
     return render_template('Registro.html')
 
@@ -67,7 +67,7 @@ def Preguntitas():
 MensajeContactanos = []                                             #Mensaje del usuario a la pagina
 @app.route('/Contactanos', methods=['GET','POST'])
 def Contactanos():
-    if(request.method == "POST"):
+    if(request.method == "POST"):                   #valida que haya enviado datos por el metodo POST
         nombre = request.form['nombre']           
         correo = request.form['email']         
         telfono = request.form['phone']
@@ -76,7 +76,7 @@ def Contactanos():
             return redirect(url_for('Contactanos'))
         else:
             MensajeContactanos.append(nombre)
-            MensajeContactanos.append(correo)
+            MensajeContactanos.append(correo)                   ##si hay datos los agrega al array MensajeContactos
             MensajeContactanos.append(telfono)
             MensajeContactanos.append(mensaje)
             print(MensajeContactanos)
@@ -88,7 +88,7 @@ def Contactanos():
 VuelosARGENTINA=[]                                          #Guarda los vuelos realizados a argentina
 @app.route('/Argentina', methods=['GET','POST'])
 def Argentina():
-    if(request.method == "POST"):
+    if(request.method == "POST"):                           #valida que haya enviado datos por el metodo POST
         nombre = request.form['nombre']           
         correo = request.form['email']         
         telfono = request.form['phone']
@@ -97,7 +97,7 @@ def Argentina():
         if(nombre == "" or correo  == "" or telfono == "" or fecha == ""  or hora == ""):             #Si no hay datos no redirecciona
             return redirect(url_for('Argentina'))
         else:
-            VuelosARGENTINA.append({'nombre': nombre, 'telefono': telfono, 'fecha': fecha, 'hora': hora} )
+            VuelosARGENTINA.append({'nombre': nombre, 'telefono': telfono, 'fecha': fecha, 'hora': hora} )       #guardado en el array de vuelosArgentina
             print(VuelosARGENTINA)
             return redirect(url_for('Pago'))
     return render_template('Argentina.html')
@@ -107,7 +107,7 @@ def Argentina():
 VuelosESPAÑA=[]                                          #Guarda los vuelos realizados a españa
 @app.route('/España', methods=['GET','POST'])
 def España():
-    if(request.method == "POST"):
+    if(request.method == "POST"):                       #valida que haya enviado datos por el metodo POST
         nombre = request.form['nombre']           
         correo = request.form['email']         
         telfono = request.form['phone']
@@ -116,7 +116,7 @@ def España():
         if(nombre == "" or correo  == "" or telfono == "" or fecha == ""  or hora == ""):             #Si no hay datos no redirecciona
             return redirect(url_for('España'))
         else:
-            VuelosESPAÑA.append({'nombre': nombre, 'telefono': telfono, 'fecha': fecha, 'hora': hora} )
+            VuelosESPAÑA.append({'nombre': nombre, 'telefono': telfono, 'fecha': fecha, 'hora': hora} )      #guardado en el array de vuelosEspaña
             print(VuelosESPAÑA)
             return redirect(url_for('Pago'))
     return render_template('España.html')
@@ -126,7 +126,7 @@ def España():
 VuelosEGIPTO=[]                                          #Guarda los vuelos realizados a egipto
 @app.route('/Egipto', methods=['GET','POST'])
 def Egipto():
-    if(request.method == "POST"):
+    if(request.method == "POST"):                       #valida que haya enviado datos por el metodo POST
         nombre = request.form['nombre']           
         correo = request.form['email']         
         telfono = request.form['phone']
@@ -135,7 +135,7 @@ def Egipto():
         if(nombre == "" or correo  == "" or telfono == "" or fecha == ""  or hora == ""):             #Si no hay datos no redirecciona
             return redirect(url_for('Egipto'))
         else:
-            VuelosEGIPTO.append({'nombre': nombre, 'telefono': telfono, 'fecha': fecha, 'hora': hora} )
+            VuelosEGIPTO.append({'nombre': nombre, 'telefono': telfono, 'fecha': fecha, 'hora': hora} )          #guardado en el array de vuelosEgipto
             print(VuelosEGIPTO)
             return redirect(url_for('Pago'))
     return render_template('Egipto.html')
@@ -145,7 +145,7 @@ def Egipto():
 VuelosTurquia=[]                                          #Guarda los vuelos realizados a turqia
 @app.route('/Turquia' , methods=['GET','POST'])
 def Turquia():
-    if(request.method == "POST"):
+    if(request.method == "POST"):                   #valida que haya enviado datos por el metodo POST
         nombre = request.form['nombre']           
         correo = request.form['email']         
         telfono = request.form['phone']
@@ -154,7 +154,7 @@ def Turquia():
         if(nombre == "" or correo  == "" or telfono == "" or fecha == ""  or hora == ""):             #Si no hay datos no redirecciona
             return redirect(url_for('Turquia'))
         else:
-            VuelosTurquia.append({'nombre': nombre, 'telefono': telfono, 'fecha': fecha, 'hora': hora} )
+            VuelosTurquia.append({'nombre': nombre, 'telefono': telfono, 'fecha': fecha, 'hora': hora} )        #guardado en el array de vuelosTurquia
             print(VuelosTurquia)
             return redirect(url_for('Pago'))
     return render_template('Turquia.html')
@@ -164,7 +164,7 @@ def Turquia():
 VuelosFrancia=[]                                          #Guarda los vuelos realizados a francia
 @app.route('/Francia', methods=['GET','POST'])
 def Francia():
-    if(request.method == "POST"):
+    if(request.method == "POST"):                               #valida que haya enviado datos por el metodo POST
         nombre = request.form['nombre']           
         correo = request.form['email']         
         telfono = request.form['phone']
@@ -173,7 +173,7 @@ def Francia():
         if(nombre == "" or correo  == "" or telfono == "" or fecha == ""  or hora == ""):             #Si no hay datos no redirecciona
             return redirect(url_for('Francia'))
         else:
-            VuelosFrancia.append({'nombre': nombre, 'telefono': telfono, 'fecha': fecha, 'hora': hora} )
+            VuelosFrancia.append({'nombre': nombre, 'telefono': telfono, 'fecha': fecha, 'hora': hora} )  #guardado en el array de vuelosFrancia
             print(VuelosFrancia)
             return redirect(url_for('Pago'))
     return render_template('Francia.html')
@@ -183,7 +183,7 @@ def Francia():
 VuelosMexico=[]                                          #Guarda los vuelos realizados a mexico
 @app.route('/Mexico', methods=['GET','POST'])
 def Mexico():
-    if(request.method == "POST"):
+    if(request.method == "POST"):                   #valida que haya enviado datos por el metodo POST
         nombre = request.form['nombre']           
         correo = request.form['email']         
         telfono = request.form['phone']
@@ -192,7 +192,7 @@ def Mexico():
         if(nombre == "" or correo  == "" or telfono == "" or fecha == ""  or hora == ""):             #Si no hay datos no redirecciona
             return redirect(url_for('Mexico'))
         else:
-            VuelosMexico.append({'nombre': nombre, 'telefono': telfono, 'fecha': fecha, 'hora': hora} )
+            VuelosMexico.append({'nombre': nombre, 'telefono': telfono, 'fecha': fecha, 'hora': hora} )  #guardado en el array de vuelosMexico
             print(VuelosMexico)
             return redirect(url_for('Pago'))
     return render_template('Mexico.html')
@@ -203,7 +203,7 @@ def Mexico():
 pago=[]                         #guarda los datos de la tarjeta del pago
 @app.route('/Pago', methods=['GET','POST'])
 def Pago():
-    if(request.method == "POST"):
+    if(request.method == "POST"):               #valida que haya enviado datos por el metodo POST
         numeroTarjeta = request.form['numeroTarjeta']           
         mesVencimiento = request.form['mesVence']         
         yearVencimiento = request.form['añoVence']
@@ -212,7 +212,7 @@ def Pago():
         if(numeroTarjeta == "" or mesVencimiento  == "" or yearVencimiento == "" or ccv == ""  or dueñoTarjeta == ""):             #Si no hay datos no redirecciona
             return redirect(url_for('Vuelos'))
         else:
-            pago.append({'NumeroTarjeta': numeroTarjeta, 'ccv': ccv, 'DueñoTarjeta': dueñoTarjeta} )
+            pago.append({'NumeroTarjeta': numeroTarjeta, 'ccv': ccv, 'DueñoTarjeta': dueñoTarjeta} )        #guardado en el array de pago
             print(pago)
             return redirect(url_for('VuelosRealizados'))
 
@@ -223,9 +223,9 @@ def Pago():
 def VuelosRealizados():                                         #Envia cada uno de los arreglos donde se encuentran los vuelos realizados
     return render_template('VuelosRealizados.html', VuelosRealizadosM = VuelosMexico, VuelosRealizadosF = VuelosFrancia
         , VuelosRealizadosT = VuelosTurquia, VuelosRealizadosEs = VuelosESPAÑA, VuelosRealizadosEg = VuelosEGIPTO
-        , VuelosRealizadosA = VuelosARGENTINA)
+        , VuelosRealizadosA = VuelosARGENTINA)              #Se les asigna otra variable para pasar los arrays
 
 
-# Ejecutar la aplicacion
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True) # Ejecutar la aplicacion
