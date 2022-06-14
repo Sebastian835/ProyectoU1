@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for                    #LIBRERIAS
 
 # Inicializar la aplicacion
 app = Flask(__name__, template_folder='templates')
@@ -6,14 +6,14 @@ app = Flask(__name__, template_folder='templates')
 usuarios_Registro = []                          #Array para los usuarios que se registren
 pagoVuelos=[]                           #Array para los vuelos que hace el usuario
 
-# Ruta principal 
-@app.route('/')
+
+@app.route('/')         # Ruta principal 
 def home():
     return render_template('home.html')
 
 
-# Ruta para el login
-@app.route('/Login', methods=['GET','POST'])
+
+@app.route('/Login', methods=['GET','POST'])            # Ruta para el login
 def Login():
     #Obtiene los datos del pagina Login por medio del metodo POST
     if(request.method == "POST"):
@@ -25,6 +25,8 @@ def Login():
         try:
             if (usuarios_Registro.index(correo) > 0):               #obtener el indice del correo
                 posicionCorreo = usuarios_Registro.index(correo)
+                print(usuarios_Registro)
+                print(posicionCorreo)
                 if(usuarios_Registro[posicionCorreo] == correo and usuarios_Registro[posicionCorreo+1] == contrase):        #compara los datos ingresados con el registro
                     return redirect(url_for('Vuelos'))              #envia a la pagina Vuelos
                 else:
@@ -35,8 +37,7 @@ def Login():
     return render_template('Login.html')
 
 
-# Ruta para el registro
-@app.route('/Registro' , methods=['GET','POST'])
+@app.route('/Registro' , methods=['GET','POST'])                    # Ruta para el registro    
 def Registro():
      #Obtiene los datos del pagina Login por medio del metodo POST
     if(request.method == "POST"):                               #valida que haya enviado datos por el metodo POST
@@ -53,19 +54,19 @@ def Registro():
             return redirect(url_for('Login'))
     return render_template('Registro.html')
 
-# Ruta para vuelos
-@app.route('/Vuelos')
+
+@app.route('/Vuelos')           # Ruta para vuelos
 def Vuelos():
     return render_template('Vuelos.html')
 
-# Ruta para preguntas
-@app.route('/PreguntasFrecuentes')
+
+@app.route('/PreguntasFrecuentes')              # Ruta para preguntas
 def Preguntitas():
     return render_template('PreguntasF.html')
 
-# Ruta para contactanos
-MensajeContactanos = []                                             #Mensaje del usuario a la pagina
-@app.route('/Contactanos', methods=['GET','POST'])
+
+MensajeContactanos = []                                             
+@app.route('/Contactanos', methods=['GET','POST'])          # Ruta para contactanos
 def Contactanos():
     if(request.method == "POST"):                   #valida que haya enviado datos por el metodo POST
         nombre = request.form['nombre']           
@@ -84,9 +85,9 @@ def Contactanos():
 
     return render_template('Contactanos.html')
 
-# Ruta para Argentina
+
 VuelosARGENTINA=[]                                          #Guarda los vuelos realizados a argentina
-@app.route('/Argentina', methods=['GET','POST'])
+@app.route('/Argentina', methods=['GET','POST'])                # Ruta para Argentina
 def Argentina():
     if(request.method == "POST"):                           #valida que haya enviado datos por el metodo POST
         nombre = request.form['nombre']           
@@ -102,10 +103,16 @@ def Argentina():
             return redirect(url_for('Pago'))
     return render_template('Argentina.html')
 
+@app.route('/borrarArgentina', methods=['POST']) 
+def borrarArgentina():
+    if request.method == 'POST':
+      VuelosARGENTINA.clear()
+      return redirect(url_for('VuelosRealizados'))   
 
-# Ruta para España
+
+
 VuelosESPAÑA=[]                                          #Guarda los vuelos realizados a españa
-@app.route('/España', methods=['GET','POST'])
+@app.route('/España', methods=['GET','POST'])               # Ruta para España
 def España():
     if(request.method == "POST"):                       #valida que haya enviado datos por el metodo POST
         nombre = request.form['nombre']           
@@ -121,10 +128,16 @@ def España():
             return redirect(url_for('Pago'))
     return render_template('España.html')
 
+@app.route('/borrarEspaña', methods=['POST']) 
+def borrarEspaña():
+    if request.method == 'POST':
+      VuelosESPAÑA.clear()
+      return redirect(url_for('VuelosRealizados'))   
 
-# Ruta para Egipto
+
+  
 VuelosEGIPTO=[]                                          #Guarda los vuelos realizados a egipto
-@app.route('/Egipto', methods=['GET','POST'])
+@app.route('/Egipto', methods=['GET','POST'])             # Ruta para Egipto
 def Egipto():
     if(request.method == "POST"):                       #valida que haya enviado datos por el metodo POST
         nombre = request.form['nombre']           
@@ -140,10 +153,16 @@ def Egipto():
             return redirect(url_for('Pago'))
     return render_template('Egipto.html')
 
+@app.route('/borrarEgipto', methods=['POST']) 
+def borrarEgipto():
+    if request.method == 'POST':
+      VuelosEGIPTO.clear()
+      return redirect(url_for('VuelosRealizados'))   
 
-# Ruta para Turquia
+
+
 VuelosTurquia=[]                                          #Guarda los vuelos realizados a turqia
-@app.route('/Turquia' , methods=['GET','POST'])
+@app.route('/Turquia' , methods=['GET','POST'])             # Ruta para Turquia
 def Turquia():
     if(request.method == "POST"):                   #valida que haya enviado datos por el metodo POST
         nombre = request.form['nombre']           
@@ -159,10 +178,15 @@ def Turquia():
             return redirect(url_for('Pago'))
     return render_template('Turquia.html')
 
+@app.route('/borrarTurquia', methods=['POST']) 
+def borrarTurquia():
+    if request.method == 'POST':
+      VuelosTurquia.clear()
+      return redirect(url_for('VuelosRealizados'))   
 
-# Ruta para Francia
+
 VuelosFrancia=[]                                          #Guarda los vuelos realizados a francia
-@app.route('/Francia', methods=['GET','POST'])
+@app.route('/Francia', methods=['GET','POST'])                      # Ruta para Francia
 def Francia():
     if(request.method == "POST"):                               #valida que haya enviado datos por el metodo POST
         nombre = request.form['nombre']           
@@ -178,10 +202,15 @@ def Francia():
             return redirect(url_for('Pago'))
     return render_template('Francia.html')
 
+@app.route('/borrarFrancia', methods=['POST']) 
+def borrarFrancia():
+    if request.method == 'POST':
+      VuelosFrancia.clear()
+      return redirect(url_for('VuelosRealizados'))   
 
-# Ruta para Mexico
+
 VuelosMexico=[]                                          #Guarda los vuelos realizados a mexico
-@app.route('/Mexico', methods=['GET','POST'])
+@app.route('/Mexico', methods=['GET','POST'])       # Ruta para Mexico
 def Mexico():
     if(request.method == "POST"):                   #valida que haya enviado datos por el metodo POST
         nombre = request.form['nombre']           
@@ -197,11 +226,16 @@ def Mexico():
             return redirect(url_for('Pago'))
     return render_template('Mexico.html')
 
+@app.route('/borrarMexico', methods=['POST']) 
+def borrarMexico():
+    if request.method == 'POST':
+      VuelosMexico.clear()
+      return redirect(url_for('VuelosRealizados'))   
 
 
-# Ruta para Pago
+
 pago=[]                         #guarda los datos de la tarjeta del pago
-@app.route('/Pago', methods=['GET','POST'])
+@app.route('/Pago', methods=['GET','POST'])         # Ruta para Pago
 def Pago():
     if(request.method == "POST"):               #valida que haya enviado datos por el metodo POST
         numeroTarjeta = request.form['numeroTarjeta']           
@@ -218,14 +252,16 @@ def Pago():
 
     return render_template('pago.html')
 
-# Ruta para Pago
-@app.route('/VuelosRealizados')
-def VuelosRealizados():                                         #Envia cada uno de los arreglos donde se encuentran los vuelos realizados
+
+@app.route('/VuelosRealizados' )        # Ruta para Vuelos Realizados
+def VuelosRealizados():     
+    #Envia cada uno de los arreglos donde se encuentran los vuelos realizados
     return render_template('VuelosRealizados.html', VuelosRealizadosM = VuelosMexico, VuelosRealizadosF = VuelosFrancia
         , VuelosRealizadosT = VuelosTurquia, VuelosRealizadosEs = VuelosESPAÑA, VuelosRealizadosEg = VuelosEGIPTO
         , VuelosRealizadosA = VuelosARGENTINA)              #Se les asigna otra variable para pasar los arrays
 
 
 
+
 if __name__ == '__main__':
-    app.run(debug=True) # Ejecutar la aplicacion
+    app.run(debug=True) # Ejecuta la aplicacion

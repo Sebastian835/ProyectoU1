@@ -58,18 +58,26 @@
                     <th scope="col">Hora de Vuelo</th>
                 </tr>
             </thead>
-            <tbody>
-                <!-- Llamado al arreglo donde se guardaron los datos que ingresamos en el formulario -->
-                {% for vuelosTurquia in VuelosRealizadosT %}
-                <tr>
-                    <td>{{vuelosTurquia.nombre}}</td>
-                    <td>{{vuelosTurquia.telefono}}</td>
-                    <td>{{vuelosTurquia.fecha}}</td>
-                    <td>{{vuelosTurquia.hora}}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
+            <form>
+                <tbody>
+                    <!-- Llamado al arreglo donde se guardaron los datos que ingresamos en el formulario -->
+                    {% for vuelosTurquia in VuelosRealizadosT %}
+                    <tr name="tabla" id="tabla">
+                        <td>{{vuelosTurquia.nombre}}</td>
+                        <td>{{vuelosTurquia.telefono}}</td>
+                        <td>{{vuelosTurquia.fecha}}</td>
+                        <td>{{vuelosTurquia.hora}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </form>
         </table>
+        <br>
+        <center>
+            <form action="/borrarTurquia" method="POST">
+                <button type="sbmit" class="btn btn-primary"> Borrar </button>
+            </form>
+        </center>
     </div>
     <br>
     <hr size="4px" color="red">
@@ -101,6 +109,12 @@
                 {% endfor %}
             </tbody>
         </table>
+        <br>
+        <center>
+            <form action="/borrarFrancia" method="POST">
+                <button type="sbmit" class="btn btn-primary"> Borrar </button>
+            </form>
+        </center>
     </div>
     <br>
     <hr size="4px" color="red">
@@ -132,6 +146,12 @@
                 {% endfor %}
             </tbody>
         </table>
+        <br>
+        <center>
+            <form action="/borrarMexico" method="POST">
+                <button type="sbmit" class="btn btn-primary"> Borrar </button>
+            </form>
+        </center>
     </div>
     <br>
     <hr size="4px" color="red">
@@ -163,6 +183,12 @@
                 {% endfor %}
             </tbody>
         </table>
+        <br>
+        <center>
+            <form action="/borrarEspaña" method="POST">
+                <button type="sbmit" class="btn btn-primary"> Borrar </button>
+            </form>
+        </center>
     </div>
     <br>
     <hr size="4px" color="red">
@@ -194,6 +220,12 @@
                 {% endfor %}
             </tbody>
         </table>
+        <br>
+        <center>
+            <form action="/borrarEgipto" method="POST">
+                <button type="sbmit" class="btn btn-primary"> Borrar </button>
+            </form>
+        </center>
     </div>
     <br>
     <hr size="4px" color="red">
@@ -225,6 +257,12 @@
                 {% endfor %}
             </tbody>
         </table>
+        <br>
+        <center>
+            <form action="/borrarArgentina" method="POST">
+                <button type="sbmit" class="btn btn-primary"> Borrar </button>
+            </form>
+        </center>
     </div>
 
     <br><br>
